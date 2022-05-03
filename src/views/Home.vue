@@ -1,18 +1,35 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div>
+    <p class="text-2xl mt-2 font-bold text-blue-500">home</p>
+
+    <div id="nav" class="flex flex-col w-full items-start gap-3">
+      <router-link to="/">Home</router-link>
+      <router-link to="/">Home2</router-link>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import { defineComponent } from "vue";
 
-@Options({
-  components: {
-    HelloWorld,
+export default defineComponent({
+  setup() {
+    return {};
   },
-})
-export default class Home extends Vue {}
+});
 </script>
+
+<style lang="scss">
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+</style>
