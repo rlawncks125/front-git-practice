@@ -1,5 +1,7 @@
 module.exports = {
   content: ["./src/**/*.{html,vue}"],
+  mode: "jit",
+  purge: ["./public/**/*.html", "./src/**/*.{html,vue}"],
   theme: {
     extend: {},
     screens: {

@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -7,10 +7,21 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Home.vue"),
   },
+  {
+    path: "/st1",
+    name: "연습1",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/퍼블연습/연습1.vue"),
+  },
+  {
+    path: "/test1",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/테스트/event_this.vue"),
+  },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes,
 });
 

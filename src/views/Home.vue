@@ -1,10 +1,20 @@
 <template>
   <div>
-    <p class="text-2xl mt-2 font-bold text-blue-500">home</p>
+    <div class="text-2xl mt-2 font-bold text-blue-800">
+      <p>(html , css) 를 주로 연습 하는 곳 입니다.</p>
+      <p class="text-yellow-800">home</p>
+    </div>
 
-    <div id="nav" class="flex flex-col w-full items-start gap-3">
-      <router-link to="/">Home</router-link>
-      <router-link to="/">Home2</router-link>
+    <div id="nav">
+      <ul class="flex flex-col w-full items-start gap-3">
+        <li>
+          <router-link to="/st1">연습1 </router-link>
+          <span>
+            참고 사이트 블라블라블라 :
+            <a href="#" target="_blank">링크</a>
+          </span>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
