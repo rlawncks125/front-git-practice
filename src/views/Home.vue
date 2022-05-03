@@ -10,8 +10,8 @@
         <li>
           <router-link to="/st1">연습1 </router-link>
           <span>
-            참고 사이트 블라블라블라 :
-            <a href="#" target="_blank">링크</a>
+            참고 사이트 :
+            <a href="https://www.jejupass.com/web" target="_blank">제주패스</a>
           </span>
         </li>
       </ul>

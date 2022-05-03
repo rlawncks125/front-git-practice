@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.apply-test {
+  @apply text-blue-200;
+}
+
+.content-text-test {
+  &::after {
+    content: "애프터 텍스트 테스트" !important;
+  }
+}
