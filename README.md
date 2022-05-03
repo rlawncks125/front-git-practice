@@ -37,7 +37,7 @@ purge: ["./public/**/*.html", "./src/**/*.{html,vue}"],
 ## swiper 에러시 버전 다운
 
 사용 방법도 6버전에 맞게 사용해야한다 ( 모듈 선언 방식이 다름)
-6버전 사이트 아카이브 [링크](http://web.archive.org/web/20210824143327/https://swiperjs.com/demos/)
+6버전 사이트 : [아카이브](http://web.archive.org/web/20210824143327/https://swiperjs.com/demos/)
 
 ```
 "swiper": "^6.8.4",

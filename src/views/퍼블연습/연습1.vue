@@ -35,14 +35,6 @@ import { defineComponent } from "vue";
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
-import "swiper/components/navigation/navigation.scss";
-import "swiper/components/pagination/pagination.scss";
-import "swiper/components/scrollbar/scrollbar.scss";
-
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
-
 export default defineComponent({
   components: { Swiper, SwiperSlide },
   setup() {
