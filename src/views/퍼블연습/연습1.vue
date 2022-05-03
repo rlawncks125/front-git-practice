@@ -33,10 +33,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import { Swiper, SwiperSlide } from "swiper/vue";
-
 export default defineComponent({
-  components: { Swiper, SwiperSlide },
   setup() {
     return {
       pagination: {
