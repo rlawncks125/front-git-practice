@@ -5,8 +5,11 @@ import store from "./store";
 import "@/assets/tailwind.scss";
 
 // swiper
-import "@/plugin/swiper"; // css 및 swiper 사용 모듈 정의
+
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
+
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 createApp(App)
   .component("swiper", Swiper)
