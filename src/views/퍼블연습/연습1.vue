@@ -20,7 +20,7 @@
       class="overflow-none h-[20rem] max-w-[1136px] my-4"
       :slidesPerView="3"
       :slidesPerGroup="1"
-      :space-between="30"
+      :space-between="25"
       :loop="true"
       :navigation="false"
       :pagination="pagination"

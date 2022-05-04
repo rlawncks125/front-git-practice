@@ -4,24 +4,20 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "",
     name: "Home",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Home.vue"),
+    component: () => import("../views/Home.vue"),
   },
   {
     path: "/st1",
     name: "연습1",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/퍼블연습/연습1.vue"),
+    component: () => import("../views/퍼블연습/연습1.vue"),
   },
   {
     path: "/test1",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/테스트/event_this.vue"),
+    component: () => import("../views/테스트/event_this.vue"),
   },
   {
     path: "/test2",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/테스트/swiper-v6.vue"),
+    component: () => import("../views/테스트/swiper-v6.vue"),
   },
 ];
 
