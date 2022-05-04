@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-yellow-400">
+  <div class="bg-yellow-400 text-base">
     <p @click="onClickEvent">연습1</p>
     <section id="sec1" class="bg-red-400">
       <p class="content-text-test after:block after:h-[2rem] after:text-white">
@@ -17,16 +17,23 @@
     </footer>
 
     <swiper
-      class="bg-blue-400 h-[20rem]"
-      :navigation="true"
+      class="overflow-none h-[20rem] max-w-[1136px] my-4"
+      :slidesPerView="3"
+      :slidesPerGroup="1"
+      :space-between="30"
+      :loop="true"
+      :navigation="false"
       :pagination="pagination"
     >
-      <swiper-slide>Slide 1</swiper-slide><swiper-slide>Slide 2</swiper-slide
-      ><swiper-slide>Slide 3</swiper-slide><swiper-slide>Slide 4</swiper-slide
-      ><swiper-slide>Slide 5</swiper-slide><swiper-slide>Slide 6</swiper-slide
-      ><swiper-slide>Slide 7</swiper-slide><swiper-slide>Slide 8</swiper-slide
-      ><swiper-slide>Slide 9</swiper-slide>
+      <swiper-slide
+        v-for="item in swiperItems"
+        class="border rounded-3xl border-black"
+        :key="item.id"
+      >
+        slide {{ item }}
+      </swiper-slide>
     </swiper>
+    <div>내용</div>
   </div>
 </template>
 
@@ -35,7 +42,10 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   setup() {
+    const swiperItems = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
     return {
+      swiperItems,
       pagination: {
         clickable: true,
         renderBullet: function (index: number, className: any) {

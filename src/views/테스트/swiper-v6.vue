@@ -1,6 +1,6 @@
 <template>
   <swiper
-    class="bg-blue-400 h-[20rem]"
+    class="swiper-pagination-outside bg-blue-400 h-[20rem]"
     :navigation="true"
     :pagination="pagination"
   >
@@ -10,6 +10,7 @@
     ><swiper-slide>Slide 7</swiper-slide><swiper-slide>Slide 8</swiper-slide
     ><swiper-slide>Slide 9</swiper-slide>
   </swiper>
+  <div>내용 더 추가</div>
 </template>
 
 <script lang="ts">
@@ -47,5 +48,16 @@ export default defineComponent({
   text-align: center;
   line-height: 2rem;
   color: white;
+}
+
+.swiper-pagination-outside {
+  &.swiper-container {
+    overflow: unset;
+    margin-bottom: 3rem;
+  }
+
+  .swiper-pagination {
+    bottom: -2.5rem;
+  }
 }
 </style>

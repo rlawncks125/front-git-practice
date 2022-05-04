@@ -3,6 +3,9 @@
 </template>
 
 <style lang="scss">
+html {
+  font-size: 10px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
