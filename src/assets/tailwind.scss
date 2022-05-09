@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.flex-col-center {
+  @apply flex flex-col justify-center;
+}
+
 .apply-test {
   @apply text-blue-200;
 }
