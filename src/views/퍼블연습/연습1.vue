@@ -1,22 +1,6 @@
 <template>
-  <div class="bg-yellow-400 text-base">
-    <p @click="onClickEvent">연습1</p>
-    <section id="sec1" class="bg-red-400">
-      <p class="content-text-test after:block after:h-[2rem] after:text-white">
-        연습2
-      </p>
-    </section>
-    <section id="sec2" class="apply-test bg-red-400 text-[1rem]">
-      <p>연습3</p>
-    </section>
-    <footer
-      class="text-[1.5rem] bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-blue-400 to-green-300"
-    >
-      <p>바탁 폰트 그라데이션</p>
-      <p>바탁 폰트</p>
-    </footer>
-
-    <swiper
+  <div class="">
+    <!-- <swiper
       class="overflow-none h-[20rem] max-w-[1136px] my-4"
       :slidesPerView="3"
       :slidesPerGroup="1"
@@ -32,8 +16,7 @@
       >
         slide {{ item }}
       </swiper-slide>
-    </swiper>
-    <div>내용</div>
+    </swiper> -->
   </div>
 </template>
 

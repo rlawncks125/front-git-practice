@@ -5,7 +5,6 @@ import store from "./store";
 import "@/assets/tailwind.scss";
 
 // swiper
-
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
