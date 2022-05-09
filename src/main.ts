@@ -5,10 +5,16 @@ import store from "./store";
 import "@/assets/tailwind.scss";
 
 // swiper
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
 createApp(App)
   .component("swiper", Swiper)
