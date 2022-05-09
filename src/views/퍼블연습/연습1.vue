@@ -310,6 +310,51 @@
           </figure>
         </a>
       </div>
+      <!-- 태그 -->
+      <div class="h-[5rem] text-2xl my-[3rem] flex justify-center gap-[3rem]">
+        <div class="p-6 bg-gray-300 rounded-[5rem] font-bold">전체</div>
+        <div class="p-6 bg-gray-300 rounded-[5rem] font-bold">#디저트</div>
+        <div class="p-6 bg-gray-300 rounded-[5rem] font-bold">#이색적인</div>
+        <div class="p-6 bg-gray-300 rounded-[5rem] font-bold">#뷰맛집</div>
+        <div class="p-6 bg-gray-300 rounded-[5rem] font-bold">#혼밥</div>
+        <div class="p-6 bg-gray-300 rounded-[5rem] font-bold">#국수맛집</div>
+      </div>
+    </section>
+    <section id="service" class="my-[8rem]">
+      <h1 class="text-5xl font-bold">서비스 이용안내</h1>
+      <!-- 서비스 -->
+      <div class="flex justify-center gap-[4rem]">
+        <a href="#/st1">
+          <div
+            class="service-sprite-0 w-[9.6rem] h-[9.6rem] border border-blue-200 rounded-full my-12 mx-auto"
+          ></div>
+          <strong class="text-3xl">렌터카 예약 안내</strong>
+        </a>
+        <a href="#/st1">
+          <div
+            class="service-sprite-2 w-[9.6rem] h-[9.6rem] border border-blue-200 rounded-full my-12 mx-auto"
+          ></div>
+          <strong class="text-3xl">렌터카 보험안내</strong>
+        </a>
+        <a href="#/st1">
+          <div
+            class="service-sprite-3 w-[9.6rem] h-[9.6rem] border border-blue-200 rounded-full my-12 mx-auto"
+          ></div>
+          <strong class="text-3xl">렌터카 인수 반납</strong>
+        </a>
+        <a href="#/st1">
+          <div
+            class="service-sprite-4 w-[9.6rem] h-[9.6rem] border border-blue-200 rounded-full my-12 mx-auto"
+          ></div>
+          <strong class="text-3xl">카페패스 이용안내</strong>
+        </a>
+        <a href="#/st1">
+          <div
+            class="service-sprite-5 w-[9.6rem] h-[9.6rem] border border-blue-200 rounded-full my-12 mx-auto"
+          ></div>
+          <strong class="text-3xl">결항 안내</strong>
+        </a>
+      </div>
     </section>
     <footer class="h-[10rem] bg-blue-400">하단</footer>
 
@@ -589,6 +634,57 @@ export default defineComponent({
     &::after {
       background-position: -170px -64px;
     }
+  }
+}
+
+@mixin service-sprite() {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: calc(50% - 16px);
+    left: calc(50% - 16px);
+
+    background: url("https://static-www.jejupass.com/resource/PC/images/main/spr_mainicon.png")
+      no-repeat 0 0;
+  }
+}
+
+.service-sprite-0 {
+  @include service-sprite();
+}
+.service-sprite-1 {
+  @include service-sprite();
+  &::after {
+    background-position: -32px 0;
+  }
+}
+.service-sprite-2 {
+  @include service-sprite();
+  &::after {
+    background-position: -62px 0;
+  }
+}
+.service-sprite-3 {
+  @include service-sprite();
+  &::after {
+    background-position: -96px 0;
+  }
+}
+.service-sprite-4 {
+  @include service-sprite();
+  &::after {
+    background-position: -128px 0;
+  }
+}
+.service-sprite-5 {
+  @include service-sprite();
+  &::after {
+    background-position: -160px 0;
   }
 }
 </style>
