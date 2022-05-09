@@ -210,7 +210,7 @@
     </section>
     <section id="promotion">
       <swiper
-        class="swiper-pagination-outside-0 h-[20rem] max-w-[1136px] my-4"
+        class="swiper-pagination-outside-0 h-[20rem] my-4"
         :style="{ overflowX: 'clip' }"
         :slidesPerView="2.5"
         :slidesPerGroup="1"
@@ -219,6 +219,14 @@
         :autoplay="{ delay: 2000, disableOnInteraction: false }"
         :navigation="false"
         :pagination="pagination"
+        :breakpoints="{
+          '1100': {
+            slidesPerView: 3,
+          },
+          '1500': {
+            slidesPerView: 4,
+          },
+        }"
         @swiper="setSwiperController"
       >
         <swiper-slide
