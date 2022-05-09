@@ -2,7 +2,7 @@
   <div class="min-w-[900px]">
     <nav
       ref="navRef"
-      :class="isNavActive ? 'bg-blue-400 shadow-2xl' : ''"
+      :class="isNavActive ? 'bg-blue-400 shadow-2xl' : 'bg-white'"
       class="flex-col-center h-[10.4rem] px-[2.5rem] sm:px-[7.2rem] sticky top-0 left-0 text-[1.8rem] z-[1000] transition"
     >
       <div class="flex justify-between gap-[1rem]">
@@ -235,7 +235,82 @@
         </div>
       </swiper>
     </section>
-    <section id="story"></section>
+    <section id="story" class="mb-[6rem] mt-[12rem]">
+      <!-- 타이틀 -->
+      <h1 class="text-4xl font-bold mb-[5rem]">테마스토리</h1>
+      <!-- 이미지 -->
+      <div class="flex gap-3">
+        <a
+          href="#/st1"
+          class="gradinet-shadow-b rounded-3xl overflow-hidden relative"
+        >
+          <figure class="h-full">
+            <img
+              class="h-full hover:scale-110 transition duration-700"
+              src="https://static-file.jejupass.com/download/691150?width=736&height=872"
+              alt="빈집프로젝트"
+            />
+          </figure>
+          <div
+            class="z-[1] absolute bottom-[10%] left-[10%] font-bold text-left pointer-events-none"
+          >
+            <p class="text-white text-3xl">
+              #다자요 빈집프로젝트 <br />
+              하천 바람집
+            </p>
+            <br />
+            <p class="text-gray-400 text-2xl">
+              #다자요 #감성숙소 #서귀포숙소 #독채펜션
+            </p>
+          </div>
+        </a>
+        <a
+          href="#/st1"
+          class="gradinet-shadow-b rounded-3xl overflow-hidden relative"
+        >
+          <figure class="h-full">
+            <img
+              class="h-full hover:scale-110 transition duration-700"
+              src="https://static-file.jejupass.com/download/675824?width=736&height=872"
+              alt="빈집프로젝트"
+            />
+          </figure>
+          <div
+            class="z-[1] absolute bottom-[10%] left-[10%] font-bold text-left pointer-events-none"
+          >
+            <p class="text-white text-3xl">
+              아이에게 만점 <br />
+              부모에겐 만족
+            </p>
+            <br />
+            <p class="text-gray-400 text-2xl">
+              #예스키즈존 #테마카페 #가족여행 #이색적인
+            </p>
+          </div>
+        </a>
+        <a
+          href="#/st1"
+          class="gradinet-shadow-b rounded-3xl overflow-hidden relative"
+        >
+          <figure class="h-full">
+            <img
+              class="h-full hover:scale-110 transition duration-700"
+              src="https://static-file.jejupass.com/download/675875?width=736&height=872"
+              alt="빈집프로젝트"
+            />
+            <div
+              class="z-[1] absolute bottom-[10%] left-[10%] font-bold text-left pointer-events-none"
+            >
+              <p class="text-white text-3xl">한 빵 한 빵 장인 정신</p>
+              <br />
+              <p class="text-gray-400 text-2xl">
+                #제주맛집 #제주베이커리 #제주도 카페 #빵지순례
+              </p>
+            </div>
+          </figure>
+        </a>
+      </div>
+    </section>
     <footer class="h-[10rem] bg-blue-400">하단</footer>
 
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -381,6 +456,22 @@ export default defineComponent({
   position: absolute;
   bottom: -2.8rem;
   left: 58%;
+}
+
+.gradinet-shadow-b {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, #000);
+    opacity: 0.8;
+  }
 }
 
 // sprite 이미지 위치
