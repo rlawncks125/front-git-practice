@@ -211,6 +211,7 @@
     <section id="promotion">
       <swiper
         class="swiper-pagination-outside-0 h-[20rem] max-w-[1136px] my-4"
+        :style="{ overflowX: 'clip' }"
         :slidesPerView="2.5"
         :slidesPerGroup="1"
         :space-between="20"
@@ -356,12 +357,96 @@
         </a>
       </div>
     </section>
-    <footer class="h-[10rem] bg-blue-400">하단</footer>
+    <section id="subcription-form" class="my-[8rem]">
+      <div
+        class="h-[14rem] flex flex-col justify-center px-[6rem] text-2xl"
+        :style="{
+          background: `url('https://static-www.jejupass.com/resource/PC/images/main/bg_news.png')`,
+        }"
+      >
+        <div class="flex justify-between text-left">
+          <div>
+            <strong class="text-3xl"> 제주패스 뉴스레터 구독 </strong>
 
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <p class="text-gray-500 text-2xl">
+              매주 제주의 속깊은 이야기를 받아보세요!
+            </p>
+          </div>
+          <div>
+            <input
+              type="text"
+              class="foucs-outline min-w-[30rem] p-[2rem] rounded-lg"
+              placeholder="구독신청 이메일을 입력해주세요."
+            />
+            <button
+              class="bg-blue-400 h-[6rem] px-[2rem] ml-[1rem] text-2xl text-white rounded-lg"
+            >
+              신청
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="QnA">
+      <div
+        class="flex justify-start gap-[4rem] text-2xl text-left leading-[3rem] px-[3rem] border-t border-gray-200 py-[4rem]"
+      >
+        <div>
+          <strong class="text-3xl">제주패스</strong>
+          <p>회사소개</p>
+          <p>회원 혜택</p>
+        </div>
+        <div>
+          <strong class="text-3xl">고객센터</strong>
+          <p>공지사항</p>
+          <p>자주찾는질문</p>
+          <p>예약확인</p>
+        </div>
+        <div>
+          <strong class="text-3xl">ESG</strong>
+          <p>그린 엠버서더</p>
+          <p>캠페인 기부</p>
+        </div>
+        <div>
+          <strong class="text-3xl">전화예약 / 고객상담</strong>
+          <p>이용에 궁금하신 점이 있으신가요?</p>
+        </div>
+      </div>
+    </section>
+    <footer
+      class="text-gray-400 text-left py-[6rem] text-xl px-[6rem]"
+      :style="{
+        background: `#18225c url('https://static-www.jejupass.com/resource/PC/images/common/bg_footPattern.png') repeat-x`,
+      }"
+    >
+      <div>
+        <p class="text-2xl">
+          <span class="text-white">개인 정보처리방침</span> | 이용 약관
+        </p>
+      </div>
+      <br />
+      <div>
+        <p>
+          (주)캐플릭스 대표이사 : 윤형준 사업자등록번호 : 105-87-76000
+          사업자정보조회 통신판매신고 제2015-제주연동-43호 관광사업자 등록번호 :
+          제2021-08호
+        </p>
+        <br />
+        <p>제주특별자치도 제주시 신광로 21, 4층 (우)63125</p>
+        <p>
+          (주)캐플릭스는 개별 항공권 및 숙박 상품에 대하여 통신판매중개자로서
+          통신판매의 당사자가 아니며 해당상품의 거래정보 및 거래 등에 대해
+          책임을 지지 않습니다.
+        </p>
+        <p>
+          (주)캐플릭스는 렌터카 파트너사가 제공하는 일부 렌터카에 대하여
+          통신판매중개자의 지위를 가지며, 해당 상품, 상품정보, 거래에 관한
+          의무와 책임은 판매자에게 있습니다.
+        </p>
+        <br />
+        <p>Copyright ⓒ KAFLIX All Rights Reserved</p>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -516,6 +601,12 @@ export default defineComponent({
 
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, #000);
     opacity: 0.8;
+  }
+}
+
+.foucs-outline {
+  &:focus {
+    outline: 1px solid rgba(96, 165, 250, 1);
   }
 }
 
