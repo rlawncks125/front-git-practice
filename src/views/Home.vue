@@ -6,12 +6,21 @@
     </div>
 
     <div id="nav">
-      <ul class="flex flex-col w-full items-start gap-3">
+      <ul class="flex flex-col w-full items-start gap-3 text-3xl">
         <li>
           <router-link to="/st1">연습1 </router-link>
           <span>
             참고 사이트 :
             <a href="https://www.jejupass.com/web" target="_blank">제주패스</a>
+          </span>
+        </li>
+        <li>
+          <router-link to="/st2">연습2 </router-link>
+          <span>
+            참고 사이트 :
+            <a href="https://www.museum.go.kr/site/main/home" target="_blank"
+              >국립중앙박물관</a
+            >
           </span>
         </li>
       </ul>
