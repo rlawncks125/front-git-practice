@@ -328,6 +328,31 @@
       </swiper>
     </div>
   </section>
+  <!-- 링크 -->
+  <section class="grid grid-cols-4 text-[1.6rem] text-left px-[2rem] py-[4rem]">
+    <!-- 박물관 링크 -->
+    <div v-for="item in insideLink" :key="item.id">
+      <p class="font-bold text-[2.2rem] py-[1rem]">
+        {{ item.title }}
+      </p>
+      <ul v-if="item.sub && item.sub.length > 0">
+        <li v-for="subItem in item.sub" :key="subItem.id" class="py-[0.5rem]">
+          {{ subItem }}
+        </li>
+      </ul>
+    </div>
+    <!-- 외부 링크 -->
+    <div class="flex flex-col gap-[1.5rem] text-[2rem] font-bold">
+      <a href="#/st2">_어린이박물관</a>
+      <a href="#/st2">_교육플랫폼 모두</a>
+      <a href="#/st2">_학예사자격증</a>
+      <a href="#/st2">_e뮤지엄</a>
+      <a href="#/st2">_외규장각 의궤 원문</a>
+      <a href="#/st2">_이러닝</a>
+      <a href="#/st2">_박물관신문</a>
+      <a href="#/st2">_문화상품점</a>
+    </div>
+  </section>
 
   <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
   <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -583,6 +608,83 @@ export default defineComponent({
       ],
     ];
 
+    // 링크
+    const insideLink = [
+      {
+        title: "관람정보",
+        sub: ["관람안내", "전시해설", "예약하기", "관람ㆍ편의시설", "오시는길"],
+      },
+      {
+        title: "전시",
+        sub: [
+          "상설전시",
+          "특별전시",
+          "디지털 실감 영상관",
+          "온라인전시관",
+          "우리문화재 국외전시",
+          "소속국립박물관전시",
+          "전시도록",
+          "외국박물관소장한국문화재",
+          "문화행사",
+        ],
+      },
+      {
+        title: "교육",
+        sub: [],
+      },
+      {
+        title: "소장품",
+        sub: [
+          "규레이터 추천 소장품",
+          "소장품검색",
+          "국보ㆍ보물 검색",
+          "수어 도영상",
+          "소장품 열람ㆍ복제",
+          "소장품 대여 안내",
+          "문화재 기증안내",
+        ],
+      },
+      {
+        title: "학술ㆍ출판",
+        sub: [
+          "정기간핼물",
+          "고고학",
+          "역사학",
+          "미술사학",
+          "아시아학",
+          "보존과학",
+          "일제 강점기 조사자료",
+          "도서관",
+          "기타",
+        ],
+      },
+      {
+        title: "소식ㆍ참여",
+        sub: [
+          "소식",
+          "영상",
+          "자원봉사안내",
+          "학예사 자격증 안내",
+          "전자민원",
+          "정보공개",
+          "소식지",
+        ],
+      },
+      {
+        title: "박물관소개",
+        sub: [
+          "인사말",
+          "비전관 전략",
+          "발자취",
+          "조직 및 업무",
+          "시설 소개",
+          "수장고",
+          "박물관관련자료",
+          "문화유산표준관리시스템",
+        ],
+      },
+    ];
+
     return {
       // main banner swiper
       mainBannerSwiperSlide,
@@ -598,6 +700,8 @@ export default defineComponent({
       postTabMenu,
       postRenderIndex,
       postingList,
+      // 링크
+      insideLink,
     };
   },
 });
