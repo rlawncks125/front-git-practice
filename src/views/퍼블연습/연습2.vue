@@ -115,7 +115,7 @@
   <section class="laptop:flex">
     <!-- 관람 시간 & 관람료 -->
     <div
-      class="flex flex-col gap-[2rem] px-[2rem] py-[4rem] border-b-2 border-black laptop:px-0 laptop:mx-[2rem]"
+      class="w-full flex flex-col gap-[2rem] px-[2rem] py-[4rem] border-b-2 border-black laptop:px-0 laptop:mx-[2rem]"
     >
       <!-- 관람시간 -->
       <div class="flex flex-col text-[1.8rem]">
@@ -148,7 +148,7 @@
     </div>
     <!-- 오는길 & 예약 -->
     <div
-      class="p-[10rem] laptop:p-0 laptop:w-[22rem] flex items-center justify-around gap-[2rem] font-bold text-[4rem] laptop:text-[2rem]"
+      class="p-[10rem] mx-[2rem] laptop:p-0 laptop:w-[28rem] flex items-center justify-around gap-[2rem] font-bold text-[4rem] laptop:text-[2rem]"
     >
       <div
         class="font-bg-ani cursor-pointer w-full h-full flex flex-col justify-center text-purple-400"
@@ -163,6 +163,75 @@
     </div>
   </section>
   <!-- 전시 -->
+  <section class="my-[8rem]">
+    <div class="flex justify-between px-[3rem] items-end">
+      <h1 class="text-[4rem]">전시</h1>
+      <div
+        class="flex items-center gap-[2rem] text-[3rem] pb-[1rem]"
+        :style="{ lineHeight: `3rem` }"
+      >
+        <button
+          class="ex-swiper-button-prev w-[2rem] h-[1.5rem] prev-arrow"
+        ></button>
+        <button
+          class="play-btn w-[2rem] h-[1.5rem]"
+          :class="{ pause: isExhAutoPlay }"
+          @click="exhChangeAutoPlay"
+        ></button>
+        <button
+          class="ex-swiper-button-next w-[2rem] h-[1.5rem] next-arrow"
+        ></button>
+      </div>
+    </div>
+    <swiper
+      :loop="true"
+      :navigation="{
+        nextEl: '.ex-swiper-button-next',
+        prevEl: '.ex-swiper-button-prev',
+      }"
+      :autoplay="{ delay: 1500, disableOnInteraction: false }"
+      :slidesPerView="1"
+      :space-between="20"
+      @swiper="exhSetSiper"
+      :breakpoints="{
+        '900': {
+          slidesPerView: 2.5,
+        },
+        '1100': {
+          slidesPerView: 3,
+        },
+        '1400': {
+          slidesPerView: 4,
+        },
+      }"
+      class="exhSwiper h-[70rem]"
+    >
+      <swiper-slide v-for="item in ExhibitionSwiperslide" :key="item.id">
+        <div class="mx-auto exh-image w-[31.5rem] h-[45rem]">
+          <img :src="item.image" alt="" class="w-full object-contain" />
+          <div class="image-content">
+            <p>중앙 박물관</p>
+          </div>
+        </div>
+        <div
+          class="p-[2rem] mt-[3rem] grid grid-cols-1 gap-[2rem] text-left text-[1.8rem]"
+        >
+          <div class="flex gap-[1rem]">
+            <div
+              class="p-[0.5rem] px-[1.5rem] border border-black bg-black text-white"
+            >
+              {{ item.exhState }}
+            </div>
+            <div class="p-[0.5rem] px-[1.5rem] border border-black bg-white">
+              {{ item.exhTag }}
+            </div>
+          </div>
+          <h2 class="font-bold">{{ item.title }}</h2>
+          <p>{{ item.period }}</p>
+        </div>
+      </swiper-slide>
+    </swiper>
+  </section>
 
   <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
   <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -179,6 +248,13 @@ export default defineComponent({
       isSwiperAutoPlay: isMainSwiperAutoPlay,
       setSwiperController: setmainSwiperController,
       onChangeAutoPlay: onMainBannerChangeAutoPlay,
+    } = useSwiper();
+
+    // 전시회 Exhibition
+    const {
+      setSwiperController: exhSetSiper,
+      onChangeAutoPlay: exhChangeAutoPlay,
+      isSwiperAutoPlay: isExhAutoPlay,
     } = useSwiper();
 
     const mainBannerSwiperSlide = [
@@ -238,13 +314,68 @@ export default defineComponent({
       },
     ];
 
+    const ExhibitionSwiperslide = [
+      {
+        image:
+          "https://www.museum.go.kr/uploadfile/ecms/media/2022/03/BD066AF6-316A-8C6D-E3D5-A00FD054F4B6_thumb.jpg",
+        title: "아스테카,태양을 움직인 사람들",
+        period: "2022-05-03 ~ 2202-08-28",
+        exhState: "현재전시",
+        exhTag: "특별전",
+      },
+      {
+        image:
+          "https://www.museum.go.kr/uploadfile/ecms/media/2022/05/17A8EB0D-BADB-5C66-2D86-1A4F1D5B2DE3_thumb.jpg",
+        title: "어느 수집가의 초대 - 고故 이건희 회장 기증 1주년 기념전",
+        period: "2022-04-28 ~ 2202-08-28",
+        exhState: "현재전시",
+        exhTag: "특별전",
+      },
+      {
+        image:
+          "https://www.museum.go.kr/uploadfile/ecms/media/2022/05/6EFCC798-EF20-1CBA-D7AF-CCED5DC508C8_thumb.jpg",
+        title: "호랑이 그림 Ⅱ",
+        period: "2022-05-03 ~ 2202-09-04",
+        exhState: "현재전시",
+        exhTag: "테마전",
+      },
+      {
+        image:
+          "https://www.museum.go.kr/uploadfile/ecms/media/2022/03/5CF040FC-36CD-4D72-5629-73C48239A241_thumb.jpg",
+        title: "빛의 향연-예산 수덕사 괘불",
+        period: "2022-04-13 ~ 2202-10-16",
+        exhState: "현재전시",
+        exhTag: "테마전",
+      },
+      {
+        image:
+          "https://www.museum.go.kr/uploadfile/ecms/media/2022/03/6898E327-80DC-A9CF-F0B5-0614921729BB_thumb.jpg",
+        title: "일본 불교조각의 세계",
+        period: "2022-04-05 ~ 2202-10-05",
+        exhState: "현재전시",
+        exhTag: "테마전",
+      },
+      {
+        image:
+          "https://www.museum.go.kr/uploadfile/ecms/media/2022/04/FF6E6D97-70E3-16BB-43E2-5944D1A46EE3_thumb.jpg",
+        title: "이집트-삶, 죽음, 부활의 이야기",
+        period: "2022-03-17 ~ 2202-08-17",
+        exhState: "현재전시",
+        exhTag: "전주",
+      },
+    ];
+
     return {
       // main banner swiper
       mainBannerSwiperSlide,
       setmainSwiperController,
       isMainSwiperAutoPlay,
       onMainBannerChangeAutoPlay,
-      //
+      // Exhibition
+      exhSetSiper,
+      ExhibitionSwiperslide,
+      exhChangeAutoPlay,
+      isExhAutoPlay,
     };
   },
 });
@@ -269,7 +400,6 @@ const useSwiper = () => {
 
   return {
     isSwiperAutoPlay,
-    SwiperController,
     setSwiperController,
     onChangeAutoPlay,
   };
@@ -322,11 +452,11 @@ const useSwiper = () => {
   z-index: 101;
 
   background: url("https://www.museum.go.kr/ux/content/images/common/btn/main_btn_play.png")
-    no-repeat center/cover;
+    no-repeat center/contain;
 
   &.pause {
     background: url("https://www.museum.go.kr/ux/content/images/common/btn/main_btn_stop.png")
-      no-repeat center/cover;
+      no-repeat center/contain;
   }
 }
 .font-bg-ani {
@@ -355,6 +485,53 @@ const useSwiper = () => {
 
     @media (min-width: 900px) {
       bottom: 3rem;
+    }
+  }
+}
+.play-btn {
+  background: url("https://www.museum.go.kr/ux/content/images/common/btn/btn_swiper_play.png")
+    no-repeat center/contain;
+
+  &.pause {
+    background: url("https://www.museum.go.kr/ux/content/images/common/btn/btn_swiper_stop.png")
+      no-repeat center/contain;
+  }
+}
+
+.prev-arrow {
+  background: url("https://www.museum.go.kr/ux/content/images/common/btn/btn_swiper_prev.png")
+    no-repeat center/contain;
+}
+.next-arrow {
+  background: url("https://www.museum.go.kr/ux/content/images/common/btn/btn_swiper_next.png")
+    no-repeat center/contain;
+}
+
+.exh-image {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  .image-content {
+    transition: opacity 0.5s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+
+    background-color: black;
+    opacity: 0;
+  }
+  &:hover {
+    .image-content {
+      opacity: 0.8;
     }
   }
 }
