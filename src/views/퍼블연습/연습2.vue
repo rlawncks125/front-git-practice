@@ -251,7 +251,7 @@
     >
       <!-- 게시판 -->
       <div
-        class="h-full mx-[2rem] flex flex-col justify-between border-b-[1px] border-black"
+        class="h-[40rem] laptop:h-full mx-[2rem] flex flex-col justify-between border-b-[1px] border-black"
       >
         <!-- 탭 메뉴 -->
         <div
@@ -279,7 +279,7 @@
         </div>
         <!-- 게시물 랜더 -->
         <ul
-          class="h-full flex-1 flex flex-col justify-between list-disc list-inside text-left p-[1rem] py-[2rem] text-[1.6rem]"
+          class="h-full flex-1 flex flex-col justify-between list-disc list-inside text-left p-[1rem] py-[2rem] text-[2rem] laptop:text-[1.6rem]"
         >
           <li v-for="item in postingList[postRenderIndex]" :key="item.id">
             <ul
@@ -329,9 +329,11 @@
     </div>
   </section>
   <!-- 링크 -->
-  <section class="grid grid-cols-4 text-[1.6rem] text-left px-[2rem] py-[4rem]">
+  <section
+    class="grid grid-cols-1 laptop:grid-cols-4 text-[1.6rem] text-left px-[2rem] py-[4rem]"
+  >
     <!-- 박물관 링크 -->
-    <div v-for="item in insideLink" :key="item.id">
+    <div v-for="item in insideLink" :key="item.id" class="hidden laptop:block">
       <p class="font-bold text-[2.2rem] py-[1rem]">
         {{ item.title }}
       </p>
@@ -342,7 +344,9 @@
       </ul>
     </div>
     <!-- 외부 링크 -->
-    <div class="flex flex-col gap-[1.5rem] text-[2rem] font-bold">
+    <div
+      class="grid grid-cols-2 laptop:grid-cols-1 gap-[1.5rem] text-[3.5rem] laptop:text-[2rem] font-bold"
+    >
       <a href="#/st2">_어린이박물관</a>
       <a href="#/st2">_교육플랫폼 모두</a>
       <a href="#/st2">_학예사자격증</a>
@@ -353,14 +357,122 @@
       <a href="#/st2">_문화상품점</a>
     </div>
   </section>
-
-  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <!-- footer -->
+  <footer
+    class="grid grid-cols-1 laptop:grid-cols-2 gap-[3rem] laptop:h-[40rem] text-left"
+  >
+    <!-- 링크 -->
+    <div class="flex flex-col px-[1rem] text-[2rem] font-bold gap-[0.5rem]">
+      <a href="#/st2">문화유산표준관리시스템</a>
+      <a href="#/st2">청년멘토</a>
+      <a href="#/st2">VCM 가상명품박물관</a>
+    </div>
+    <!-- 바로가기 -->
+    <div
+      class="grid grid-cols-1 laptop:grid-cols-2 laptop:h-[10rem] text-[2rem] items-end gap-[3rem]"
+    >
+      <div class="foregin-link">
+        <p>관련사이트 바로가기</p>
+        <div class="active-content w-full">
+          <p>국립박물관 문화재단</p>
+          <p>국립중앙박물관회</p>
+          <p>사단법인 한국박물관협회</p>
+        </div>
+      </div>
+      <div class="foregin-link">
+        <p>소속박물관 바로가기</p>
+        <div class="active-content">
+          <p>국립경주박물관</p>
+          <p>국립광주박물관</p>
+          <p>국립전주박물관</p>
+          <p>국립대구박물관</p>
+          <p>국립부여박물관</p>
+          <p>국립공주박물관</p>
+          <p>국립진주박물관</p>
+          <p>국립청주박물관</p>
+          <p>국립김해박물관</p>
+          <p>국립제주박물관</p>
+          <p>국립춘천박물관</p>
+          <p>국립나주박물관</p>
+          <p>국립익산박물관</p>
+        </div>
+      </div>
+      <div class="foregin-link">
+        <p>가이드북 다운로드</p>
+        <div class="active-content">cc</div>
+      </div>
+    </div>
+    <!-- 약관 & 서비스 -->
+    <div class="px-[1rem] text-[1.6rem] flex flex-col gap-[0.5rem]">
+      <h1 class="text-[2rem] font-bold">개인정보처리방침</h1>
+      <p>이용약관</p>
+      <p>전자민원</p>
+      <p>공공데이터개방</p>
+      <p>저작권정책</p>
+      <p>클린신고센터</p>
+      <p>찾아오시는길</p>
+    </div>
+    <!-- sns & 주소 -->
+    <div class="px-[1rem]">
+      <!-- sns -->
+      <div class="h-[3.3rem] flex gap-[2rem] my-[2rem]">
+        <img
+          class="h-full object-contain"
+          src="https://www.museum.go.kr/ux/content/images/common/ico/naver.svg"
+          alt=""
+        />
+        <img
+          class="h-full object-contain"
+          src="https://www.museum.go.kr/ux/content/images/common/ico/twitter.svg"
+          alt=""
+        />
+        <img
+          class="h-full object-contain"
+          src="https://www.museum.go.kr/ux/content/images/common/ico/facebook.svg"
+          alt=""
+        />
+        <img
+          class="h-full object-contain"
+          src="https://www.museum.go.kr/ux/content/images/common/ico/instagram.svg"
+          alt=""
+        />
+        <img
+          class="h-full object-contain"
+          src="https://www.museum.go.kr/ux/content/images/common/ico/youtube.svg"
+          alt=""
+        />
+        <img
+          class="h-full object-contain"
+          src="https://www.museum.go.kr/ux/content/images/common/ico/audioclip.svg"
+          alt=""
+        />
+      </div>
+      <!-- 주소 -->
+      <div class="text-[1.6rem]">
+        <p>04383 서울시 용산구 서빙고로 137(용산동6가 168-6)</p>
+        <p>대표전화 02-2077-9000</p>
+        <p>© National Museum of Korea.</p>
+        <!-- logo -->
+        <div class="flex h-[5rem] my-[2rem]">
+          <img
+            class="h-full object-contain"
+            src="https://www.museum.go.kr/ux/content/images/common/web_access.png"
+            alt=""
+          />
+          <img
+            class="h-full object-contain"
+            src="https://www.museum.go.kr/ux/content/images/common/logo_open.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script lang="ts">
 import Swiper from "swiper";
-import { defineComponent, ref } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 
 export default defineComponent({
   setup() {
@@ -685,6 +797,28 @@ export default defineComponent({
       },
     ];
 
+    onMounted(() => {
+      // 외부링크 클릭 이벤트
+      const linkLists = document.querySelectorAll(".foregin-link");
+
+      const removeLinkListsClass = () => {
+        linkLists.forEach((v) => {
+          v.classList.remove("active");
+        });
+      };
+      linkLists.forEach((v) => {
+        v.addEventListener("click", () => {
+          if (v.classList.contains("active")) {
+            v.classList.toggle("active");
+            return;
+          }
+
+          removeLinkListsClass();
+          v.classList.add("active");
+        });
+      });
+    });
+
     return {
       // main banner swiper
       mainBannerSwiperSlide,
@@ -858,6 +992,41 @@ const useSwiper = () => {
   &:hover {
     .image-content {
       opacity: 0.8;
+    }
+  }
+}
+
+.foregin-link {
+  position: relative;
+  cursor: pointer;
+  padding: 0 1rem 1rem;
+
+  border-bottom: 1px solid black;
+  margin: 0 1rem 0 0;
+
+  .active-content {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    max-height: 0;
+    padding: 0 1rem 0;
+    font-size: 1.5rem;
+  }
+  &.active {
+    background-color: black;
+    color: white;
+
+    .active-content {
+      position: absolute;
+      transition: max-height 0.1s;
+      max-height: 100vh;
+
+      bottom: 4rem;
+      left: 0;
+      background-color: black;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
     }
   }
 }
