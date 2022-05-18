@@ -165,7 +165,7 @@
   <!-- 전시 -->
   <section class="my-[8rem]">
     <div class="flex justify-between px-[3rem] items-end">
-      <h1 class="text-[4rem]">전시</h1>
+      <h1 class="text-[4rem] font-bold">전시</h1>
       <div
         class="flex items-center gap-[2rem] text-[3rem] pb-[1rem]"
         :style="{ lineHeight: `3rem` }"
@@ -231,6 +231,102 @@
         </div>
       </swiper-slide>
     </swiper>
+  </section>
+  <!-- 게시판 -->
+  <section>
+    <!-- 타이틀 제목 : 알립니다. -->
+    <div
+      class="my-[3rem] flex text-[4rem] font-bold items-center gap-[1rem] px-[1rem]"
+    >
+      <img
+        class="h-[4rem]"
+        src="https://www.museum.go.kr/ux/content/images/common/ico/ico_main_notice.png"
+        alt=""
+      />
+      <h1>알립니다</h1>
+    </div>
+    <!-- 게시판 &  배너 -->
+    <div
+      class="grid grid-cols-1 laptop:grid-cols-2 laptop:h-[40rem] text-[2rem]"
+    >
+      <!-- 게시판 -->
+      <div
+        class="h-full mx-[2rem] flex flex-col justify-between border-b-[1px] border-black"
+      >
+        <!-- 탭 메뉴 -->
+        <div
+          class="h-[4.5rem] flex justify-between items-center border-b-[1px] border-black"
+        >
+          <ul class="w-full flex-1 flex justify-between h-full">
+            <button
+              v-for="(item, index) in postTabMenu"
+              :key="index"
+              class="w-full"
+              :class="{
+                ' font-bold border-b-[0.5rem] border-black':
+                  postRenderIndex === index,
+              }"
+              @click="postRenderIndex = index"
+            >
+              {{ item }}
+            </button>
+          </ul>
+          <button
+            class="w-[2.8rem] h-[2.8rem] ml-[4rem] border border-black font-bold"
+          >
+            +
+          </button>
+        </div>
+        <!-- 게시물 랜더 -->
+        <ul
+          class="h-full flex-1 flex flex-col justify-between list-disc list-inside text-left p-[1rem] py-[2rem] text-[1.6rem]"
+        >
+          <li v-for="item in postingList[postRenderIndex]" :key="item.id">
+            <ul
+              class="inline-flex justify-between"
+              :style="{ width: `calc(100% - 30px)` }"
+            >
+              <span
+                class="flex-1 font-bold w-0 mr-[2rem] overflow-hidden whitespace-nowrap overflow-ellipsis"
+                >{{ item.title }}</span
+              >
+              <span class="text-gray-500">{{ item.day }}</span>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 배너 -->
+      <swiper
+        :pagination="true"
+        :slidesPerView="1"
+        :spaceBetween="25"
+        class="w-full h-[50rem] p-10 laptop:h-[34vw]"
+      >
+        <swiper-slide>
+          <a class="p-2" href="#/st2">
+            <img
+              class="w-full object-contain"
+              src="https://www.museum.go.kr/uploadfile/ecms/banner/121.png"
+              alt=""
+            />
+          </a>
+        </swiper-slide>
+        <swiper-slide>
+          <a
+            class="p-2"
+            href="#/st2
+          "
+          >
+            <img
+              class="w-full object-contain"
+              src="https://www.museum.go.kr/uploadfile/ecms/banner/650792.jpg"
+              alt=""
+            />
+          </a>
+        </swiper-slide>
+      </swiper>
+    </div>
   </section>
 
   <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -365,6 +461,128 @@ export default defineComponent({
       },
     ];
 
+    //  게시판 섹션
+    const postTabMenu = ["알림", "고시/공고", "채용 안내", "보도자료"];
+    const postRenderIndex = ref(0);
+    const postingList = [
+      // index 0
+      [
+        {
+          title: "국립중앙박물관 임시 휴관 안내(5.21.)",
+          day: "2022.05.18",
+        },
+        {
+          title: "2022년도 외국 박물관 한국실 지원 사업 참여 기관 모집 공고",
+          day: "2022.04.21",
+        },
+        {
+          title:
+            "사회적 거리두기 조정안에 따른 국립중앙박물관 도서관 이용 안내",
+          day: "2021.11.02",
+        },
+        {
+          title: "상설전시관 백제실 임시 휴실 알림(5.23.~5.24.)",
+          day: "2022.05.18",
+        },
+        {
+          title: "세계문화관 중국실 임시 휴실 알림(5.23.~5.27.)",
+          day: "2022.05.16",
+        },
+        {
+          title: "분실물 정보안내",
+          day: "2022.05.16",
+        },
+      ],
+      // index 1
+      [
+        {
+          title: "국립청주박물관 공무직근로자 (교육보조) 채용 최종 합격자 공고",
+          day: "2022.05.02",
+        },
+        {
+          title: "2022년 상반기 학예사 자격증 및 경력인정대상기관 심의결과",
+          day: "2022.04.22",
+        },
+        {
+          title:
+            "2022년 공무직(시설관리 전기) 근로자 채용 서류전형 합격자 발표 및 면접시험 일정 공고",
+          day: "2022.04.14",
+        },
+        {
+          title: "국립청주박물관 학예연구실 공무직근로자(교육보조) 채용 공고",
+          day: "2022.03.31",
+        },
+        {
+          title:
+            "국립중앙박물관 특별전 도록  『어느 수집가의 초대』  위탁 출판 공고",
+          day: "2022.02.21",
+        },
+        {
+          title:
+            "초․중․고 학생단체 전시 안내를 위한 국립중앙박물관 청년멘토 모집 공고",
+          day: "2022.01.19",
+        },
+      ],
+      [
+        {
+          title:
+            "국립중앙박물관 고객지원팀 공무직(응급대기실 간호사) 서류전형 합격자 및 면접시험 공고",
+          day: "2022.05.16",
+        },
+        {
+          title: "국립중앙박물관 고객지원팀 공무직(간호사) 근로자 채용 공고",
+          day: "2022.05.04",
+        },
+        {
+          title:
+            "2022년 국립대구박물관 공무직(시설관리 전기) 근로자 채용 최종합격자 공고",
+          day: "2022.05.04",
+        },
+        {
+          title: "국립중앙박물관 공무원(전문경력관) 채용 공고",
+          day: "2022.04.26",
+        },
+        {
+          title:
+            "2022년도 국립중앙박물관 시설관리과 공무직 [소방(선임), 소방, 조경] 채용 최종합격자 공고",
+          day: "2022.04.21",
+        },
+        {
+          title:
+            "2022년 국립중앙박물관 학예연구직 공무원 경력경쟁채용시험 공고",
+          day: "2022.04.15",
+        },
+      ],
+      [
+        {
+          title:
+            "[국립대구박물관] 국립대구박물관과 국립한글박물관 “이내말삼 드러보소, 내방가사”특별전 공동 개최",
+          day: "2022.05.18",
+        },
+        {
+          title: "[국립경주박물관] 제38회 우리 문화재 그리기 대회",
+          day: "2022.05.17",
+        },
+        {
+          title: "[국립전주박물관] 동춘서커스 ‘초인의 비상’ 공연",
+          day: "2022.05.17",
+        },
+        {
+          title:
+            "[국립중앙박물관] 국립중앙박물관과 신세계면세점이 함께하는 K-Culture Day",
+          day: "2022.05.17",
+        },
+        {
+          title: "[국립진주박물관] 국립진주박물관 실감체험관 개관",
+          day: "2022.05.13",
+        },
+        {
+          title: "[국립전주박물관] 옛 그림 속 전주, 실감영상으로 깨어나다",
+          day: "2022.05.12",
+        },
+      ],
+    ];
+
     return {
       // main banner swiper
       mainBannerSwiperSlide,
@@ -376,6 +594,10 @@ export default defineComponent({
       ExhibitionSwiperslide,
       exhChangeAutoPlay,
       isExhAutoPlay,
+      // posting
+      postTabMenu,
+      postRenderIndex,
+      postingList,
     };
   },
 });
