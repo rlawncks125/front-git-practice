@@ -1,473 +1,479 @@
 <template>
-  <!-- 유틸 -->
-  <div
-    class="util hidden laptop:flex justify-end my-[1rem] gap-[1rem] px-[2rem]"
-  >
-    <a href="#/st2">어린이 박물관</a>
-    <a href="#/st2">학예사자격증</a>
-    <a href="#/st2">박물관신문</a>
-    <a href="#/st2">속속박문관 바로가기</a>
-    <a href="#/st2">Language</a>
-    <div class="util-social flex gap-[1rem]">
-      <a href="#/st2">
-        <img
-          src="https://www.museum.go.kr/ux/content/images/common/ico/ico_header_item1.png"
-          alt=""
-        />
-      </a>
-      <a href="#/st2">
-        <img
-          src="https://www.museum.go.kr/ux/content/images/common/ico/ico_header_item2.png"
-          alt=""
-        />
-      </a>
-      <a href="#/st2">
-        <img
-          src="https://www.museum.go.kr/ux/content/images/common/ico/ico_header_item3.png"
-          alt=""
-        />
-      </a>
-      <a href="#/st2">
-        <img
-          src="https://www.museum.go.kr/ux/content/images/common/ico/ico_header_item4.png"
-          alt=""
-        />
-      </a>
-      <a href="#/st2">
-        <img
-          src="https://www.museum.go.kr/ux/content/images/common/ico/ico_header_item5.png"
-          alt=""
-        />
-      </a>
-      <a href="#/st2">
-        <img
-          src="https://www.museum.go.kr/ux/content/images/common/ico/ico_header_item6.png"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-  <!-- nav -->
-  <nav
-    class="w-full relative flex px-[2rem] py-[4rem] justify-between items-center"
-  >
-    <div class="logo w-[22rem] mr-[3rem]">
-      <img
-        src="https://www.museum.go.kr/ux/content/images/common/header_logo.png"
-        alt=""
-      />
-    </div>
-    <ul
-      class="nav-item w-full hidden laptop:flex justify-start text-[1.8rem] font-bold gap-[3rem]"
-    >
-      <li>관란 정보</li>
-      <li>전시</li>
-      <li>교육</li>
-      <li>소장품</li>
-      <li>학술ㆍ출판</li>
-      <li>소식ㆍ참여</li>
-      <li>박물관 소개</li>
-    </ul>
+  <div class="mx-auto">
+    <!-- 유틸 -->
     <div
-      class="relative laptop:absolute flex items-center text-[1.5rem] gap-[2rem] top-0 right-[2rem]"
+      class="util hidden laptop:flex justify-end my-[1rem] gap-[1rem] px-[2rem]"
     >
-      <span class="hidden laptop:inline-block">로그인</span>
-      <span class="hidden laptop:inline-block">회원가입</span>
-      <img
-        class="object-contain h-full"
-        src="https://www.museum.go.kr/ux/content/images/common/btn/btn_search_open.png"
-        alt=""
-      />
-      <img
-        class="object-contain h-full laptop:hidden"
-        src="https://www.museum.go.kr/ux/content/images/common/btn/m_btn_menu_open.png"
-        alt=""
-      />
-    </div>
-  </nav>
-  <!-- main banner swuper -->
-  <swiper
-    :loop="true"
-    :pagination="{
-      clickable: true,
-    }"
-    :autoplay="{ delay: 2000, disableOnInteraction: false }"
-    @swiper="setmainSwiperController"
-    class="mySwiper h-[105vw] laptop:h-[40vw]"
-  >
-    <swiper-slide v-for="item in mainBannerSwiperSlide" :key="item.id">
-      <picture>
-        <source
-          class="w-full object-contain"
-          media="(min-width: 900px)"
-          :srcset="item.laptopImage"
-        />
-        <img :src="item.mobileImage" class="w-full object-contain" alt="" />
-      </picture>
-    </swiper-slide>
-    <div
-      class="swiper-control-btn cursor-pointer"
-      :class="{ pause: isMainSwiperAutoPlay }"
-      @click="onMainBannerChangeAutoPlay"
-    ></div>
-  </swiper>
-  <!-- 오는 방법 & 입장료 & 관람시간 & 예약 -->
-  <section class="laptop:flex">
-    <!-- 관람 시간 & 관람료 -->
-    <div
-      class="w-full flex flex-col gap-[2rem] px-[2rem] py-[4rem] border-b-2 border-black laptop:px-0 laptop:mx-[2rem]"
-    >
-      <!-- 관람시간 -->
-      <div class="flex flex-col text-[1.8rem]">
-        <div class="h-[3.5rem] flex items-center gap-[1rem]">
+      <a href="#/st2">어린이 박물관</a>
+      <a href="#/st2">학예사자격증</a>
+      <a href="#/st2">박물관신문</a>
+      <a href="#/st2">속속박문관 바로가기</a>
+      <a href="#/st2">Language</a>
+      <div class="util-social flex gap-[1rem]">
+        <a href="#/st2">
           <img
-            class="h-full"
-            src="https://www.museum.go.kr/ux/content/images/common/ico/ico_main_cont_img_1.png"
+            src="https://www.museum.go.kr/ux/content/images/common/ico/ico_header_item1.png"
             alt=""
           />
-          <strong class="text-[2.2rem]">관람시간</strong>
-        </div>
-        <div class="flex gap-[2rem] pl-[2rem] flex-wrap">
-          <p><strong>월/화/목/금/일</strong><span>10:00 ~ 18:00</span></p>
-          <p><strong>수/토</strong> <span>10:00 ~ 21:00</span></p>
-          <p>*입장 마감은 폐관 30분 전까지</p>
-        </div>
+        </a>
+        <a href="#/st2">
+          <img
+            src="https://www.museum.go.kr/ux/content/images/common/ico/ico_header_item2.png"
+            alt=""
+          />
+        </a>
+        <a href="#/st2">
+          <img
+            src="https://www.museum.go.kr/ux/content/images/common/ico/ico_header_item3.png"
+            alt=""
+          />
+        </a>
+        <a href="#/st2">
+          <img
+            src="https://www.museum.go.kr/ux/content/images/common/ico/ico_header_item4.png"
+            alt=""
+          />
+        </a>
+        <a href="#/st2">
+          <img
+            src="https://www.museum.go.kr/ux/content/images/common/ico/ico_header_item5.png"
+            alt=""
+          />
+        </a>
+        <a href="#/st2">
+          <img
+            src="https://www.museum.go.kr/ux/content/images/common/ico/ico_header_item6.png"
+            alt=""
+          />
+        </a>
       </div>
-      <!-- 관람료 -->
-      <div
-        class="h-[3.5rem] flex justify-start items-center gap-[2rem] text-[1.8rem]"
-      >
+    </div>
+    <!-- nav -->
+    <nav
+      class="w-full relative flex px-[2rem] py-[4rem] justify-between items-center"
+    >
+      <div class="logo w-[22rem] mr-[3rem]">
         <img
-          src="https://www.museum.go.kr/ux/content/images/common/ico/ico_main_cont_img_2.png"
+          src="https://www.museum.go.kr/ux/content/images/common/header_logo.png"
           alt=""
         />
-        <strong>관람료</strong>
-        <strong>무료</strong>
-        <p>특별전시는 유로</p>
       </div>
-    </div>
-    <!-- 오는길 & 예약 -->
-    <div
-      class="p-[10rem] mx-[2rem] laptop:p-0 laptop:w-[28rem] flex items-center justify-around gap-[2rem] font-bold text-[4rem] laptop:text-[2rem]"
-    >
-      <div
-        class="font-bg-ani cursor-pointer w-full h-full flex flex-col justify-center text-purple-400"
+      <ul
+        class="nav-item w-full hidden laptop:flex justify-start text-[1.8rem] font-bold gap-[3rem]"
       >
-        <p>오시는길</p>
-      </div>
+        <li>관란 정보</li>
+        <li>전시</li>
+        <li>교육</li>
+        <li>소장품</li>
+        <li>학술ㆍ출판</li>
+        <li>소식ㆍ참여</li>
+        <li>박물관 소개</li>
+      </ul>
       <div
-        class="font-bg-ani cursor-pointer w-full h-full flex flex-col justify-center text-purple-400"
+        class="relative laptop:absolute flex items-center text-[1.5rem] gap-[2rem] top-0 right-[2rem]"
       >
-        <p>예약 하기</p>
+        <span class="hidden laptop:inline-block">로그인</span>
+        <span class="hidden laptop:inline-block">회원가입</span>
+        <img
+          class="object-contain h-full"
+          src="https://www.museum.go.kr/ux/content/images/common/btn/btn_search_open.png"
+          alt=""
+        />
+        <img
+          class="object-contain h-full laptop:hidden"
+          src="https://www.museum.go.kr/ux/content/images/common/btn/m_btn_menu_open.png"
+          alt=""
+        />
       </div>
-    </div>
-  </section>
-  <!-- 전시 -->
-  <section class="my-[8rem]">
-    <div class="flex justify-between px-[3rem] items-end">
-      <h1 class="text-[4rem] font-bold">전시</h1>
-      <div
-        class="flex items-center gap-[2rem] text-[3rem] pb-[1rem]"
-        :style="{ lineHeight: `3rem` }"
-      >
-        <button
-          class="ex-swiper-button-prev w-[2rem] h-[1.5rem] prev-arrow"
-        ></button>
-        <button
-          class="play-btn w-[2rem] h-[1.5rem]"
-          :class="{ pause: isExhAutoPlay }"
-          @click="exhChangeAutoPlay"
-        ></button>
-        <button
-          class="ex-swiper-button-next w-[2rem] h-[1.5rem] next-arrow"
-        ></button>
-      </div>
-    </div>
+    </nav>
+    <!-- main banner swuper -->
     <swiper
       :loop="true"
-      :navigation="{
-        nextEl: '.ex-swiper-button-next',
-        prevEl: '.ex-swiper-button-prev',
+      :pagination="{
+        clickable: true,
       }"
-      :autoplay="{ delay: 1500, disableOnInteraction: false }"
-      :slidesPerView="1"
-      :space-between="20"
-      @swiper="exhSetSiper"
-      :breakpoints="{
-        '900': {
-          slidesPerView: 2.5,
-        },
-        '1100': {
-          slidesPerView: 3,
-        },
-        '1400': {
-          slidesPerView: 4,
-        },
-      }"
-      class="exhSwiper h-[70rem]"
+      :autoplay="{ delay: 2000, disableOnInteraction: false }"
+      @swiper="setmainSwiperController"
+      class="mySwiper h-[105vw] laptop:h-[40vw]"
     >
-      <swiper-slide v-for="item in ExhibitionSwiperslide" :key="item.id">
-        <div class="mx-auto exh-image w-[31.5rem] h-[45rem]">
-          <img :src="item.image" alt="" class="w-full object-contain" />
-          <div class="image-content">
-            <p>중앙 박물관</p>
-          </div>
-        </div>
-        <div
-          class="p-[2rem] mt-[3rem] grid grid-cols-1 gap-[2rem] text-left text-[1.8rem]"
-        >
-          <div class="flex gap-[1rem]">
-            <div
-              class="p-[0.5rem] px-[1.5rem] border border-black bg-black text-white"
-            >
-              {{ item.exhState }}
-            </div>
-            <div class="p-[0.5rem] px-[1.5rem] border border-black bg-white">
-              {{ item.exhTag }}
-            </div>
-          </div>
-          <h2 class="font-bold">{{ item.title }}</h2>
-          <p>{{ item.period }}</p>
-        </div>
+      <swiper-slide v-for="item in mainBannerSwiperSlide" :key="item.id">
+        <picture>
+          <source
+            class="w-full object-contain"
+            media="(min-width: 900px)"
+            :srcset="item.laptopImage"
+          />
+          <img :src="item.mobileImage" class="w-full object-contain" alt="" />
+        </picture>
       </swiper-slide>
-    </swiper>
-  </section>
-  <!-- 게시판 -->
-  <section>
-    <!-- 타이틀 제목 : 알립니다. -->
-    <div
-      class="my-[3rem] flex text-[4rem] font-bold items-center gap-[1rem] px-[1rem]"
-    >
-      <img
-        class="h-[4rem]"
-        src="https://www.museum.go.kr/ux/content/images/common/ico/ico_main_notice.png"
-        alt=""
-      />
-      <h1>알립니다</h1>
-    </div>
-    <!-- 게시판 &  배너 -->
-    <div
-      class="grid grid-cols-1 laptop:grid-cols-2 laptop:h-[40rem] text-[2rem]"
-    >
-      <!-- 게시판 -->
       <div
-        class="h-[40rem] laptop:h-full mx-[2rem] flex flex-col justify-between border-b-[1px] border-black"
+        class="swiper-control-btn cursor-pointer"
+        :class="{ pause: isMainSwiperAutoPlay }"
+        @click="onMainBannerChangeAutoPlay"
+      ></div>
+    </swiper>
+    <!-- 오는 방법 & 입장료 & 관람시간 & 예약 -->
+    <section class="laptop:flex">
+      <!-- 관람 시간 & 관람료 -->
+      <div
+        class="w-full flex flex-col gap-[2rem] px-[2rem] py-[4rem] border-b-2 border-black laptop:px-0 laptop:mx-[2rem]"
       >
-        <!-- 탭 메뉴 -->
-        <div
-          class="h-[4.5rem] flex justify-between items-center border-b-[1px] border-black"
-        >
-          <ul class="w-full flex-1 flex justify-between h-full">
-            <button
-              v-for="(item, index) in postTabMenu"
-              :key="index"
-              class="w-full"
-              :class="{
-                ' font-bold border-b-[0.5rem] border-black':
-                  postRenderIndex === index,
-              }"
-              @click="postRenderIndex = index"
-            >
-              {{ item }}
-            </button>
-          </ul>
-          <button
-            class="w-[2.8rem] h-[2.8rem] ml-[4rem] border border-black font-bold"
-          >
-            +
-          </button>
+        <!-- 관람시간 -->
+        <div class="flex flex-col text-[1.8rem]">
+          <div class="h-[3.5rem] flex items-center gap-[1rem]">
+            <img
+              class="h-full"
+              src="https://www.museum.go.kr/ux/content/images/common/ico/ico_main_cont_img_1.png"
+              alt=""
+            />
+            <strong class="text-[2.2rem]">관람시간</strong>
+          </div>
+          <div class="flex gap-[2rem] pl-[2rem] flex-wrap">
+            <p><strong>월/화/목/금/일</strong><span>10:00 ~ 18:00</span></p>
+            <p><strong>수/토</strong> <span>10:00 ~ 21:00</span></p>
+            <p>*입장 마감은 폐관 30분 전까지</p>
+          </div>
         </div>
-        <!-- 게시물 랜더 -->
-        <ul
-          class="h-full flex-1 flex flex-col justify-between list-disc list-inside text-left p-[1rem] py-[2rem] text-[2rem] laptop:text-[1.6rem]"
+        <!-- 관람료 -->
+        <div
+          class="h-[3.5rem] flex justify-start items-center gap-[2rem] text-[1.8rem]"
         >
-          <li v-for="item in postingList[postRenderIndex]" :key="item.id">
-            <ul
-              class="inline-flex justify-between"
-              :style="{ width: `calc(100% - 30px)` }"
-            >
-              <span
-                class="flex-1 font-bold w-0 mr-[2rem] overflow-hidden whitespace-nowrap overflow-ellipsis"
-                >{{ item.title }}</span
+          <img
+            src="https://www.museum.go.kr/ux/content/images/common/ico/ico_main_cont_img_2.png"
+            alt=""
+          />
+          <strong>관람료</strong>
+          <strong>무료</strong>
+          <p>특별전시는 유로</p>
+        </div>
+      </div>
+      <!-- 오는길 & 예약 -->
+      <div
+        class="p-[10rem] mx-[2rem] laptop:p-0 laptop:w-[28rem] flex items-center justify-around gap-[2rem] font-bold text-[4rem] laptop:text-[2rem]"
+      >
+        <div
+          class="font-bg-ani cursor-pointer w-full h-full flex flex-col justify-center text-purple-400"
+        >
+          <p>오시는길</p>
+        </div>
+        <div
+          class="font-bg-ani cursor-pointer w-full h-full flex flex-col justify-center text-purple-400"
+        >
+          <p>예약 하기</p>
+        </div>
+      </div>
+    </section>
+    <!-- 전시 -->
+    <section class="my-[8rem]">
+      <div class="flex justify-between px-[3rem] items-end">
+        <h1 class="text-[4rem] font-bold">전시</h1>
+        <div
+          class="flex items-center gap-[2rem] text-[3rem] pb-[1rem]"
+          :style="{ lineHeight: `3rem` }"
+        >
+          <button
+            class="ex-swiper-button-prev w-[2rem] h-[1.5rem] prev-arrow"
+          ></button>
+          <button
+            class="play-btn w-[2rem] h-[1.5rem]"
+            :class="{ pause: isExhAutoPlay }"
+            @click="exhChangeAutoPlay"
+          ></button>
+          <button
+            class="ex-swiper-button-next w-[2rem] h-[1.5rem] next-arrow"
+          ></button>
+        </div>
+      </div>
+      <swiper
+        :loop="true"
+        :navigation="{
+          nextEl: '.ex-swiper-button-next',
+          prevEl: '.ex-swiper-button-prev',
+        }"
+        :autoplay="{ delay: 1500, disableOnInteraction: false }"
+        :slidesPerView="1"
+        :space-between="20"
+        @swiper="exhSetSiper"
+        :breakpoints="{
+          '900': {
+            slidesPerView: 2.5,
+          },
+          '1100': {
+            slidesPerView: 3,
+          },
+          '1400': {
+            slidesPerView: 4,
+          },
+        }"
+        class="exhSwiper h-[70rem]"
+      >
+        <swiper-slide v-for="item in ExhibitionSwiperslide" :key="item.id">
+          <div class="mx-auto exh-image w-[31.5rem] h-[45rem]">
+            <img :src="item.image" alt="" class="w-full object-contain" />
+            <div class="image-content">
+              <p>중앙 박물관</p>
+            </div>
+          </div>
+          <div
+            class="p-[2rem] mt-[3rem] grid grid-cols-1 gap-[2rem] text-left text-[1.8rem]"
+          >
+            <div class="flex gap-[1rem]">
+              <div
+                class="p-[0.5rem] px-[1.5rem] border border-black bg-black text-white"
               >
-              <span class="text-gray-500">{{ item.day }}</span>
+                {{ item.exhState }}
+              </div>
+              <div class="p-[0.5rem] px-[1.5rem] border border-black bg-white">
+                {{ item.exhTag }}
+              </div>
+            </div>
+            <h2 class="font-bold">{{ item.title }}</h2>
+            <p>{{ item.period }}</p>
+          </div>
+        </swiper-slide>
+      </swiper>
+    </section>
+    <!-- 게시판 -->
+    <section>
+      <!-- 타이틀 제목 : 알립니다. -->
+      <div
+        class="my-[3rem] flex text-[4rem] font-bold items-center gap-[1rem] px-[1rem]"
+      >
+        <img
+          class="h-[4rem]"
+          src="https://www.museum.go.kr/ux/content/images/common/ico/ico_main_notice.png"
+          alt=""
+        />
+        <h1>알립니다</h1>
+      </div>
+      <!-- 게시판 &  배너 -->
+      <div
+        class="grid grid-cols-1 laptop:grid-cols-2 laptop:h-[40rem] text-[2rem]"
+      >
+        <!-- 게시판 -->
+        <div
+          class="h-[40rem] laptop:h-full mx-[2rem] flex flex-col justify-between border-b-[1px] border-black"
+        >
+          <!-- 탭 메뉴 -->
+          <div
+            class="h-[4.5rem] flex justify-between items-center border-b-[1px] border-black"
+          >
+            <ul class="w-full flex-1 flex justify-between h-full">
+              <button
+                v-for="(item, index) in postTabMenu"
+                :key="index"
+                class="w-full"
+                :class="{
+                  ' font-bold border-b-[0.5rem] border-black':
+                    postRenderIndex === index,
+                }"
+                @click="postRenderIndex = index"
+              >
+                {{ item }}
+              </button>
             </ul>
+            <button
+              class="w-[2.8rem] h-[2.8rem] ml-[4rem] border border-black font-bold"
+            >
+              +
+            </button>
+          </div>
+          <!-- 게시물 랜더 -->
+          <ul
+            class="h-full flex-1 flex flex-col justify-between list-disc list-inside text-left p-[1rem] py-[2rem] text-[2rem] laptop:text-[1.6rem]"
+          >
+            <li v-for="item in postingList[postRenderIndex]" :key="item.id">
+              <ul
+                class="inline-flex justify-between"
+                :style="{ width: `calc(100% - 30px)` }"
+              >
+                <span
+                  class="flex-1 font-bold w-0 mr-[2rem] overflow-hidden whitespace-nowrap overflow-ellipsis"
+                  >{{ item.title }}</span
+                >
+                <span class="text-gray-500">{{ item.day }}</span>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 배너 -->
+        <swiper
+          :pagination="true"
+          :slidesPerView="1"
+          :spaceBetween="25"
+          class="w-full h-[40rem] p-10 max-h-[40rem] laptop:h-[34vw]"
+        >
+          <swiper-slide>
+            <a class="p-2" href="#/st2">
+              <img
+                class="h-full object-contain mx-auto"
+                src="https://www.museum.go.kr/uploadfile/ecms/banner/121.png"
+                alt=""
+              />
+            </a>
+          </swiper-slide>
+          <swiper-slide>
+            <a
+              class="p-2"
+              href="#/st2
+          "
+            >
+              <img
+                class="h-full object-contain mx-auto"
+                src="https://www.museum.go.kr/uploadfile/ecms/banner/650792.jpg"
+                alt=""
+              />
+            </a>
+          </swiper-slide>
+        </swiper>
+      </div>
+    </section>
+    <!-- 링크 -->
+    <section
+      class="grid grid-cols-1 laptop:grid-cols-4 text-[1.6rem] text-left px-[2rem] py-[4rem]"
+    >
+      <!-- 박물관 링크 -->
+      <div
+        v-for="item in insideLink"
+        :key="item.id"
+        class="hidden laptop:block"
+      >
+        <p class="font-bold text-[2.2rem] py-[1rem]">
+          {{ item.title }}
+        </p>
+        <ul v-if="item.sub && item.sub.length > 0">
+          <li v-for="subItem in item.sub" :key="subItem.id" class="py-[0.5rem]">
+            {{ subItem }}
           </li>
         </ul>
       </div>
-
-      <!-- 배너 -->
-      <swiper
-        :pagination="true"
-        :slidesPerView="1"
-        :spaceBetween="25"
-        class="w-full h-[50rem] p-10 laptop:h-[34vw]"
+      <!-- 외부 링크 -->
+      <div
+        class="grid grid-cols-2 laptop:grid-cols-1 gap-[1.5rem] text-[3.5rem] laptop:text-[2rem] font-bold"
       >
-        <swiper-slide>
-          <a class="p-2" href="#/st2">
-            <img
-              class="w-full object-contain"
-              src="https://www.museum.go.kr/uploadfile/ecms/banner/121.png"
-              alt=""
-            />
-          </a>
-        </swiper-slide>
-        <swiper-slide>
-          <a
-            class="p-2"
-            href="#/st2
-          "
-          >
-            <img
-              class="w-full object-contain"
-              src="https://www.museum.go.kr/uploadfile/ecms/banner/650792.jpg"
-              alt=""
-            />
-          </a>
-        </swiper-slide>
-      </swiper>
-    </div>
-  </section>
-  <!-- 링크 -->
-  <section
-    class="grid grid-cols-1 laptop:grid-cols-4 text-[1.6rem] text-left px-[2rem] py-[4rem]"
-  >
-    <!-- 박물관 링크 -->
-    <div v-for="item in insideLink" :key="item.id" class="hidden laptop:block">
-      <p class="font-bold text-[2.2rem] py-[1rem]">
-        {{ item.title }}
-      </p>
-      <ul v-if="item.sub && item.sub.length > 0">
-        <li v-for="subItem in item.sub" :key="subItem.id" class="py-[0.5rem]">
-          {{ subItem }}
-        </li>
-      </ul>
-    </div>
-    <!-- 외부 링크 -->
-    <div
-      class="grid grid-cols-2 laptop:grid-cols-1 gap-[1.5rem] text-[3.5rem] laptop:text-[2rem] font-bold"
+        <a href="#/st2">_어린이박물관</a>
+        <a href="#/st2">_교육플랫폼 모두</a>
+        <a href="#/st2">_학예사자격증</a>
+        <a href="#/st2">_e뮤지엄</a>
+        <a href="#/st2">_외규장각 의궤 원문</a>
+        <a href="#/st2">_이러닝</a>
+        <a href="#/st2">_박물관신문</a>
+        <a href="#/st2">_문화상품점</a>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer
+      class="grid grid-cols-1 laptop:grid-cols-2 gap-[3rem] laptop:h-[40rem] text-left"
     >
-      <a href="#/st2">_어린이박물관</a>
-      <a href="#/st2">_교육플랫폼 모두</a>
-      <a href="#/st2">_학예사자격증</a>
-      <a href="#/st2">_e뮤지엄</a>
-      <a href="#/st2">_외규장각 의궤 원문</a>
-      <a href="#/st2">_이러닝</a>
-      <a href="#/st2">_박물관신문</a>
-      <a href="#/st2">_문화상품점</a>
-    </div>
-  </section>
-  <!-- footer -->
-  <footer
-    class="grid grid-cols-1 laptop:grid-cols-2 gap-[3rem] laptop:h-[40rem] text-left"
-  >
-    <!-- 링크 -->
-    <div class="flex flex-col px-[1rem] text-[2rem] font-bold gap-[0.5rem]">
-      <a href="#/st2">문화유산표준관리시스템</a>
-      <a href="#/st2">청년멘토</a>
-      <a href="#/st2">VCM 가상명품박물관</a>
-    </div>
-    <!-- 바로가기 -->
-    <div
-      class="grid grid-cols-1 laptop:grid-cols-2 laptop:h-[10rem] text-[2rem] items-end gap-[3rem]"
-    >
-      <div class="foregin-link">
-        <p>관련사이트 바로가기</p>
-        <div class="active-content w-full">
-          <p>국립박물관 문화재단</p>
-          <p>국립중앙박물관회</p>
-          <p>사단법인 한국박물관협회</p>
+      <!-- 링크 -->
+      <div class="flex flex-col px-[1rem] text-[2rem] font-bold gap-[0.5rem]">
+        <a href="#/st2">문화유산표준관리시스템</a>
+        <a href="#/st2">청년멘토</a>
+        <a href="#/st2">VCM 가상명품박물관</a>
+      </div>
+      <!-- 바로가기 -->
+      <div
+        class="grid grid-cols-1 laptop:grid-cols-2 laptop:h-[10rem] text-[2rem] items-end gap-[3rem]"
+      >
+        <div class="foregin-link">
+          <p>관련사이트 바로가기</p>
+          <div class="active-content w-full">
+            <p>국립박물관 문화재단</p>
+            <p>국립중앙박물관회</p>
+            <p>사단법인 한국박물관협회</p>
+          </div>
+        </div>
+        <div class="foregin-link">
+          <p>소속박물관 바로가기</p>
+          <div class="active-content">
+            <p>국립경주박물관</p>
+            <p>국립광주박물관</p>
+            <p>국립전주박물관</p>
+            <p>국립대구박물관</p>
+            <p>국립부여박물관</p>
+            <p>국립공주박물관</p>
+            <p>국립진주박물관</p>
+            <p>국립청주박물관</p>
+            <p>국립김해박물관</p>
+            <p>국립제주박물관</p>
+            <p>국립춘천박물관</p>
+            <p>국립나주박물관</p>
+            <p>국립익산박물관</p>
+          </div>
+        </div>
+        <div class="foregin-link">
+          <p>가이드북 다운로드</p>
+          <div class="active-content">cc</div>
         </div>
       </div>
-      <div class="foregin-link">
-        <p>소속박물관 바로가기</p>
-        <div class="active-content">
-          <p>국립경주박물관</p>
-          <p>국립광주박물관</p>
-          <p>국립전주박물관</p>
-          <p>국립대구박물관</p>
-          <p>국립부여박물관</p>
-          <p>국립공주박물관</p>
-          <p>국립진주박물관</p>
-          <p>국립청주박물관</p>
-          <p>국립김해박물관</p>
-          <p>국립제주박물관</p>
-          <p>국립춘천박물관</p>
-          <p>국립나주박물관</p>
-          <p>국립익산박물관</p>
-        </div>
+      <!-- 약관 & 서비스 -->
+      <div class="px-[1rem] text-[1.6rem] flex flex-col gap-[0.5rem]">
+        <h1 class="text-[2rem] font-bold">개인정보처리방침</h1>
+        <p>이용약관</p>
+        <p>전자민원</p>
+        <p>공공데이터개방</p>
+        <p>저작권정책</p>
+        <p>클린신고센터</p>
+        <p>찾아오시는길</p>
       </div>
-      <div class="foregin-link">
-        <p>가이드북 다운로드</p>
-        <div class="active-content">cc</div>
-      </div>
-    </div>
-    <!-- 약관 & 서비스 -->
-    <div class="px-[1rem] text-[1.6rem] flex flex-col gap-[0.5rem]">
-      <h1 class="text-[2rem] font-bold">개인정보처리방침</h1>
-      <p>이용약관</p>
-      <p>전자민원</p>
-      <p>공공데이터개방</p>
-      <p>저작권정책</p>
-      <p>클린신고센터</p>
-      <p>찾아오시는길</p>
-    </div>
-    <!-- sns & 주소 -->
-    <div class="px-[1rem]">
-      <!-- sns -->
-      <div class="h-[3.3rem] flex gap-[2rem] my-[2rem]">
-        <img
-          class="h-full object-contain"
-          src="https://www.museum.go.kr/ux/content/images/common/ico/naver.svg"
-          alt=""
-        />
-        <img
-          class="h-full object-contain"
-          src="https://www.museum.go.kr/ux/content/images/common/ico/twitter.svg"
-          alt=""
-        />
-        <img
-          class="h-full object-contain"
-          src="https://www.museum.go.kr/ux/content/images/common/ico/facebook.svg"
-          alt=""
-        />
-        <img
-          class="h-full object-contain"
-          src="https://www.museum.go.kr/ux/content/images/common/ico/instagram.svg"
-          alt=""
-        />
-        <img
-          class="h-full object-contain"
-          src="https://www.museum.go.kr/ux/content/images/common/ico/youtube.svg"
-          alt=""
-        />
-        <img
-          class="h-full object-contain"
-          src="https://www.museum.go.kr/ux/content/images/common/ico/audioclip.svg"
-          alt=""
-        />
-      </div>
-      <!-- 주소 -->
-      <div class="text-[1.6rem]">
-        <p>04383 서울시 용산구 서빙고로 137(용산동6가 168-6)</p>
-        <p>대표전화 02-2077-9000</p>
-        <p>© National Museum of Korea.</p>
-        <!-- logo -->
-        <div class="flex h-[5rem] my-[2rem]">
+      <!-- sns & 주소 -->
+      <div class="px-[1rem]">
+        <!-- sns -->
+        <div class="h-[3.3rem] flex gap-[2rem] my-[2rem]">
           <img
             class="h-full object-contain"
-            src="https://www.museum.go.kr/ux/content/images/common/web_access.png"
+            src="https://www.museum.go.kr/ux/content/images/common/ico/naver.svg"
             alt=""
           />
           <img
             class="h-full object-contain"
-            src="https://www.museum.go.kr/ux/content/images/common/logo_open.png"
+            src="https://www.museum.go.kr/ux/content/images/common/ico/twitter.svg"
+            alt=""
+          />
+          <img
+            class="h-full object-contain"
+            src="https://www.museum.go.kr/ux/content/images/common/ico/facebook.svg"
+            alt=""
+          />
+          <img
+            class="h-full object-contain"
+            src="https://www.museum.go.kr/ux/content/images/common/ico/instagram.svg"
+            alt=""
+          />
+          <img
+            class="h-full object-contain"
+            src="https://www.museum.go.kr/ux/content/images/common/ico/youtube.svg"
+            alt=""
+          />
+          <img
+            class="h-full object-contain"
+            src="https://www.museum.go.kr/ux/content/images/common/ico/audioclip.svg"
             alt=""
           />
         </div>
+        <!-- 주소 -->
+        <div class="text-[1.6rem]">
+          <p>04383 서울시 용산구 서빙고로 137(용산동6가 168-6)</p>
+          <p>대표전화 02-2077-9000</p>
+          <p>© National Museum of Korea.</p>
+          <!-- logo -->
+          <div class="flex h-[5rem] my-[2rem]">
+            <img
+              class="h-full object-contain"
+              src="https://www.museum.go.kr/ux/content/images/common/web_access.png"
+              alt=""
+            />
+            <img
+              class="h-full object-contain"
+              src="https://www.museum.go.kr/ux/content/images/common/logo_open.png"
+              alt=""
+            />
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </template>
 
 <script lang="ts">
