@@ -13,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/st2",
-    name: "연습1",
+    name: "연습2",
     component: () => import("../views/퍼블연습/연습2.vue"),
   },
   {
