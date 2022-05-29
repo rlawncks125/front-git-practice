@@ -23,6 +23,10 @@
             >
           </span>
         </li>
+        <li>
+          <router-link to="/st3">연습3 </router-link>
+          <span> </span>
+        </li>
       </ul>
     </div>
   </div>
