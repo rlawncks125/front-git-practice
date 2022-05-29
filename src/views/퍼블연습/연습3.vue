@@ -24,7 +24,46 @@
       </ul>
     </div>
   </nav>
-  <section class="block bg-yellow-400 h-[40rem]">test</section>
+  <section class="block bg-purple-400 h-[40rem]">
+    <div class="grid grid-cols-3 center">
+      <div class="mx-auto">
+        <img
+          class="w-[4rem] h-[4rem] border rounded-full overflow-hidden"
+          src="#"
+          alt="이미지"
+        />
+        <p>sss</p>
+        <p>www</p>
+      </div>
+      <div class="mx-auto">
+        <img
+          class="w-[4rem] h-[4rem] border rounded-full overflow-hidden"
+          src="#"
+          alt="이미지"
+        />
+        <p>sss</p>
+        <p>www</p>
+      </div>
+      <div class="mx-auto">
+        <img
+          class="w-[4rem] h-[4rem] border rounded-full overflow-hidden"
+          src="#"
+          alt="이미지"
+        />
+        <p>sss</p>
+        <p>www</p>
+      </div>
+      <div class="mx-auto">
+        <img
+          class="w-[4rem] h-[4rem] border rounded-full overflow-hidden"
+          src="#"
+          alt="이미지"
+        />
+        <p>sss</p>
+        <p>www</p>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script lang="ts">
