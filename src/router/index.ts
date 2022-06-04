@@ -29,6 +29,10 @@ const routes: Array<RouteRecordRaw> = [
     path: "/test2",
     component: () => import("../views/테스트/swiper-v6.vue"),
   },
+  {
+    path: "/JSX",
+    component: () => import("../views/테스트/JSX/JSX.vue"),
+  },
 ];
 
 const router = createRouter({
