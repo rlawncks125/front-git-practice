@@ -1,4 +1,5 @@
 <template>
+  <!-- 빌드시 주석 체크 -->
   <div>
     <div class="text-2xl mt-2 font-bold text-blue-800">
       <p>(html , css) 를 주로 연습 하는 곳 입니다.</p>

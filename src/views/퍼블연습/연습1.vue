@@ -1,4 +1,5 @@
 <template>
+  <!-- 연습1 주석 -->
   <div class="min-w-[900px]">
     <nav
       ref="navRef"
